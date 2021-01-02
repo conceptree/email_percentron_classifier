@@ -2,6 +2,7 @@
 Academic project where we implement a python email spam filter based on the Perceptron algorithm. 
 
 ## Usage
+![usage](./archive/usage.gif "Usage")
 
 ## Project needs/requirements
 
