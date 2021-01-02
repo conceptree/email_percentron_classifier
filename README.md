@@ -1,4 +1,4 @@
-# email_percentron_classifier
+# email_perceptron_classifier
 Academic project where we implement a python email spam filter based on the Perceptron algorithm. 
 
 ## Usage
