@@ -3,6 +3,8 @@ import re
 import copy
 import os
 from email_classifier import EmailClassifier
+import matplotlib.pyplot as plt
+import numpy as np
 
 class Util:
 
@@ -24,14 +26,12 @@ class Util:
                     text = text_file.read()
                     storage_dict.update({dir_entry_path: EmailClassifier(text, self.bagOfWords(text), true_class)})
 
-
     # Set the stop words
     def setStopWords(self, stop_word_text_file):
         stops = []
         with open(stop_word_text_file, encoding="latin-1") as txt:
             stops = (txt.read().splitlines())
         return stops
-
 
     # Remove stop words from data set and store in dictionary
     def removeStopWords(self, stops, data_set):
@@ -42,7 +42,6 @@ class Util:
                     del filtered_data_set[j].getWordFreqs()[i]
         return filtered_data_set
 
-
     # Extracts the vocabulary of all the text in a data set
     def extractVocab(self, data_set):
         v = []
@@ -51,7 +50,6 @@ class Util:
                 if j not in v:
                     v.append(j)
         return v
-
 
     # learns weights using the perceptron training rule
     def learnWeights(self, weights, learning_constant, training_set, num_iterations, classes):

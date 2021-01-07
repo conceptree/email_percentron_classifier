@@ -40,6 +40,7 @@ def main():
 
     # Creating the needed datasets from the available files so that we can run a train and test process
     # Dictionaries containing the text, word frequencies, and true/learned classifications
+
     util.makeDataSet(training_set, "../data/train/spam", classes[1])
     util.makeDataSet(training_set, "../data/train/ham", classes[0])
     util.makeDataSet(test_set, "../data/test/spam", classes[1])
@@ -105,6 +106,7 @@ def main():
     print("Filtered emails classified correctly: %d/%d" % (filt_num_correct_guesses, len(filtered_test_set)))
     print("Filtered accuracy: %.4f%%" % (float(filt_num_correct_guesses) / float(len(filtered_test_set)) * 100.0))
 
+    #util.plot_data(filtered_test_set, classes)
 
 if __name__ == '__main__':
     main()
